@@ -188,6 +188,16 @@
   #define BEEPER_PIN       P1_30   // (37) not 5V tolerant
   #define BTN_ENC          P0_28   // (58) open-drain
 
+  #if ENABLED(MKS_12864OLED)
+    #define DOGLCD_CS    P1_18
+    #define DOGLCD_A0    P1_19
+    #define LCD_PINS_DC  P1_21
+    #define DOGLCD_SCK   P0_15
+    #define DOGLCD_MOSI  P0_18
+    #define FORCE_SOFT_SPI
+  #endif
+
+
   #if ENABLED(CR10_STOCKDISPLAY)
     #define LCD_PINS_RS    P1_22
 
@@ -249,6 +259,7 @@
         #define LCD_PINS_D6 P1_22
         #define LCD_PINS_D7 P1_23
       #endif
+    
 
     #endif // !FYSETC_MINI_12864
 
